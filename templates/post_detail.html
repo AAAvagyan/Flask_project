@@ -1,0 +1,23 @@
+{% extends 'base.html'  %}
+
+{% block title %}
+{{article.first_name}}
+{% endblock  %}
+
+{% block body %}
+<div class="container">
+    <h1>{{article.first_name}} {{article.last_name}} </h1>
+
+
+    <div class="alert alert-info">
+        <p><b>First Name:</b> {{article.first_name}}</p>
+        <p><b>Last Name:</b> {{article.last_name}}</p>
+        <p><b>Diagnosis: </b>{{article.diagnosis}}</p>
+        <p><b>Date:</b> {{article.date.date()}}</p>
+        <p><b>Age:</b> {{article.age}}</p>
+        <a href="/posts/{{ article.id }}/delete" class="btn btn-danger">Delete</a>
+        <a href="/posts/{{ article.id }}/update" class="btn btn-success">Edit</a>
+    </div>
+</div>
+
+{% endblock  %}

@@ -1,0 +1,30 @@
+{% extends 'base.html'  %}
+
+{% block title %}
+Добавить пациента
+{% endblock  %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Добавить пациента</h1>
+        <form method="post">
+            <!-- <input type="text" name="title" id="title" class="form-control" ><br> -->
+            <div>First Name</div>
+            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="First Name" >
+            <div>Last Name</div>
+            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Last Name"><br>
+            <div>Diagnosis</div>
+            <textarea name="diagnosis" id="diagnosis" class="form-control" placeholder="Diagnosis"></textarea>
+            <div>Date</div>
+            <input type="date" id="date" name="date"  ><br>
+            <div>Age</div>
+            <input name="age" id="age" type="number" min="1" max="100" step="1" > <br>
+
+
+           <!-- <textarea name="intro" id="intro" class="form-control"></textarea><br>
+            <textarea name="text" id="text" class="form-control"></textarea><br> -->
+            <div><br></div>
+            <input type="submit"  class="btn btn-success" value="Submit">
+        </form>
+    </div>
+{% endblock  %}

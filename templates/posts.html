@@ -1,0 +1,29 @@
+{% extends 'base.html'  %}
+
+{% block title %}
+Архив данных пациента
+{% endblock  %}
+
+{% block body %}
+<div class="container">
+    <h1>Архив данных пациента</h1>
+    {% if articles|length > 0 %}
+
+        {%  for el in articles %}
+        <div class="alert alert-info">
+            <h2>{{el.first_name}}</h2>
+            <h2>{{el.last_name}}</h2>
+            <p>Diagnosis: {{el.diagnosis}}</p>
+            <p><b>Date: {{el.date.date()}}</b></p>
+            <p><b>Age: {{el.age}}</b></p>
+            <a href="/posts/{{ el.id }}" class="btn btn-warning">Подробнее</a>
+
+
+        </div>
+        {% endfor %}
+    {% else %}
+    <p> На сайте еще нет данных пациентов</p>
+    {% endif %}
+</div>
+
+{% endblock  %}
